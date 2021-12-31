@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>冷弋白的网页</title>
+    <link rel="stylesheet" href="CSS/windows.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/animation.css">
+    <link rel="stylesheet" href="CSS/dance.css">
+</head>
+
+<body>
+    <div class="OSA">
+        <div class="leftObsBack"></div>
+        <div class="rightObsBack"></div>
+        <div class="LeftObs">
+            <div class="leftObs"></div>
+            <div class="leftObs"></div>
+            <div class="leftObs"></div>
+            <div class="leftObs"></div>
+            <div class="leftObs"></div>
+            <div class="leftObs"></div>
+            <div class="leftObs"></div>
+            <div class="leftObs"></div>
+            <div class="leftObs"></div>
+            <div class="leftObs"></div>
+            <div class="leftObs"></div>
+        </div>
+        <div class="RightObs">
+            <div class="rightObs"></div>
+            <div class="rightObs"></div>
+            <div class="rightObs"></div>
+            <div class="rightObs"></div>
+            <div class="rightObs"></div>
+            <div class="rightObs"></div>
+            <div class="rightObs"></div>
+            <div class="rightObs"></div>
+            <div class="rightObs"></div>
+            <div class="rightObs"></div>
+            <div class="rightObs"></div>
+        </div>
+    </div>
+
+    <!-- 空间小电视 -->
+    <div class="room">
+        <div class="wall"><img class="wallImg" src="IMG/全景/1.jpg"></div>
+        <div class="wall"><img class="wallImg" src="IMG/全景/2.jpg"></div>
+        <div class="wall"><img class="wallImg" src="IMG/全景/3.jpg"></div>
+        <div class="wall"><img class="wallImg" src="IMG/全景/4.jpg"></div>
+        <div class="wall"><img class="wallImg" src="IMG/全景/5.jpg"></div>
+        <div class="wall"><img class="wallImg" src="IMG/全景/6.jpg"></div>
+    </div>
+    <div class="cube">
+        <ul>
+            <li style="--i:3" class="expression">
+                <span>˙ ▽ ˙</span>
+                <img src="IMG/表情/exp0.png">
+            </li>
+            <li style="--i:4"></li>
+            <li class="TVIntroduce" style="--i:1"><a href="javascript:;" class="introduce"></a></li>
+            <li style="--i:2"></li>
+            <li style="--i:5">
+                <div class="left"></div>
+                <div class="right"></div>
+            </li>
+            <li style="--i:0"></li>
+        </ul>
+    </div>
+    <div class="cubeSon">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li>
+                <div class="leftSon"></div>
+                <div class="rightSon"></div>
+            </li>
+            <li style="--i:0"></li>
+        </ul>
+    </div>
+    <!-- 入场样式 -->
+    <div class="alert">
+    </div>
+    <div class="skipAnimation">跳过入场动画</div>
+    <div class="skipAnimationAll">跳过动画及新手引导</div>
+    <div class="TEXT">
+        <h2></h2>
+    </div>
+    <div class="assistant">
+        <h1>来自神秘人</h1>
+        <div>
+            <div class="dialogue">
+                <img class="headPortrait" src="IMG/他是谁？.png">
+                <div class="Tips"></div>
+            </div>
+            <div class="skip">
+                <h2>欢迎进入矩形空间，请选择您的访问方式</h2>
+                <p class="noSkip">&gt;第一次访问&lt;</p>
+                <p class="skipStart">&gt;跳过新手引导&lt;</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 输入框 -->
+    <span class="leftSlide">→</span>
+    <div class="change">
+        <h1>功能类设置</h1>
+        <div class="adTIon setStyle">
+            <p class="setBreath" style="--b:1;">按下滑动的旋转时间</p>
+            <div class="input">
+                <span class="adTIonInput inputLight"></span>
+                <input type="text" placeholder=">=0">
+            </div>
+            <div class="help">?</div>
+        </div>
+        <div class="size setStyle">
+            <p class="setBreath" style="--b:2;">体积大小</p>
+            <div class="input">
+                <span class="sizeInput inputLight"></span>
+                <input type="text" placeholder=">0">
+            </div>
+            <div class="help">?</div>
+        </div>
+        <div class="sensitivity setStyle">
+            <p class="setBreath" style="--b:3;">按下滑动的灵敏度</p>
+            <div class="input">
+                <span class="sensitivityInput inputLight"></span>
+                <input type="text" placeholder=">0">
+            </div>
+            <div class="help">?</div>
+        </div>
+
+        <!-- 复选框 -->
+        <div class="checkbox">
+            <div class="hideBg setStyle">
+                <p class="setBreath" style="--b:4;">隐藏空间</p>
+                <i class="fail2">☹</i>
+                <label class="swtHideBg" for="hideBg">
+                    <span></span>
+                </label>
+                <input type="checkbox" id="hideBg">
+                <div class="help">?</div>
+            </div>
+            <div class="HideBgColor setStyle setSonStyle">
+                <p class="setBreath" style="--b:5;">虚空背景色</p>
+                <input type="color">
+            </div>
+            <div class="circular setStyle">
+                <p class="setBreath" style="--b:6;">矩形转圆形</p>
+                <label class="swtCircular" for="circular">
+                    <span></span>
+                </label>
+                <input type="checkbox" id="circular">
+                <div class="help">?</div>
+            </div>
+            <div class="xRotate setStyle">
+                <p class="setBreath" style="--b:7;">禁用X轴滑动</p>
+                <i class="fail1">失效</i>
+                <label class="swtXRotate" for="xRotate">
+                    <span></span>
+                </label>
+                <input type="checkbox" id="xRotate">
+                <div class="help">?</div>
+            </div>
+            <div class="yRotate setStyle">
+                <p class="setBreath" style="--b:8;">禁用Y轴滑动</p>
+                <i class="fail1">失效</i>
+                <label class="swtYRotate" for="yRotate">
+                    <span></span>
+                </label>
+                <input type="checkbox" id="yRotate">
+                <div class="help">?</div>
+            </div>
+            <div class="bgAutoRot setStyle">
+                <p class="setBreath" style="--b:9;">空间自动旋转</p>
+                <i class="fail2"></i>
+                <label class="swtBgAutoRot" for="bgAutoRot">
+                    <span></span>
+                </label>
+                <input type="checkbox" id="bgAutoRot">
+                <div class="help">?</div>
+            </div>
+            <div class="bgTime setStyle setSonStyle">
+                <p class="setBreath" style="--b:10;">旋转一周的时长（秒）</p>
+                <div class="input">
+                    <span class="bgTimeInput inputLight"></span>
+                    <input type="text" placeholder=">0">
+                </div>
+            </div>
+            <div class="bloAutoRot setStyle">
+                <p class="setBreath" style="--b:11;">小电视自动旋转</p>
+                <i class="fail2"></i>
+                <label class="swtBloAutoRot" for="bloAutoRot">
+                    <span></span>
+                </label>
+                <input type="checkbox" id="bloAutoRot">
+                <div class="help">?</div>
+            </div>
+            <div class="bloTime setStyle setSonStyle">
+                <p class="setBreath" style="--b:12;">旋转一周的时长（秒）</p>
+                <div class="input">
+                    <span class="bloTimenInput inputLight"></span>
+                    <input type="text" placeholder=">0">
+                </div>
+            </div>
+            <div class="disImg setStyle">
+                <p class="setBreath" style="--b:13;">360°全景图</p>
+                <label class="swtDisImg" for="disImg">
+                    <span></span>
+                </label>
+                <input type="checkbox" id="disImg">
+                <div class="help">?</div>
+            </div>
+            <div class="xLimit setStyle setSonStyle">
+                <p class="setBreath" style="--b:14;">全景Y轴锁定±90°</p>
+                <label class="swtXLimit" for="xLimit">
+                    <span></span>
+                </label>
+                <input type="checkbox" id="xLimit">
+                <div class="help">?</div>
+            </div>
+            <div class="bgFlRot setStyle">
+                <p class="setBreath" style="--b:15;">禁用空间跟随鼠标</p>
+                <i class="fail3">失效</i>
+                <label class="swtBgFlRot" for="bgFlRot">
+                    <span></span>
+                </label>
+                <input type="checkbox" id="bgFlRot" class="flag">
+                <div class="help">?</div>
+            </div>
+            <div class="cubeFlRot setStyle">
+                <p class="setBreath" style="--b:16;">禁止小电视跟随按下滑动</p>
+                <i class="fail3">失效</i>
+                <label class="swtCubeFlRot" for="cubeFlRot">
+                    <span></span>
+                </label>
+                <input type="checkbox" id="cubeFlRot" class="flag">
+                <div class="help">?</div>
+            </div>
+        </div>
+
+        <!-- 其他类设置 -->
+        <h1>其他设置</h1>
+        <div class="God setStyle">
+            <p class="setBreath" style="--b:17;">上帝视角</p>
+            <i class="fail2"></i>
+            <label class="swtGod" for="God">
+                <span></span>
+            </label>
+            <input type="checkbox" id="God">
+            <div class="help">?</div>
+        </div>
+        <div class="huYan setStyle">
+            <p class="setBreath" style="--b:18;">护眼模式</p>
+            <label class="swtHuYan" for="huYan">
+                <span></span>
+            </label>
+            <input type="checkbox" id="huYan">
+            <div class="help">?</div>
+        </div>
+        <div class="huYanCubeUl setStyle setSonStyle">
+            <p class="setBreath" style="--b:19;">页面亮度</p>
+            <div class="input">
+                <span class="huYanCubeUlInput inputLight"></span>
+                <input type="text" placeholder="0-10">
+            </div>
+        </div>
+    </div>
+
+    <!-- dance模式 -->
+    <div class="countDown">
+        <h1></h1>
+    </div>
+    <span class="rightSlide">←</span>
+    <div class="danceBg">
+    </div>
+    <div class="dance">
+        <h1>拓展功能</h1>
+        <div class="jump setStyle">
+            <p class="setBreath" style="--b:20;">dance</p>
+            <i class="fail3">☹</i>
+            <i class="failD1">☹</i>
+            <label class="swtJump" for="jump">
+                <span></span>
+            </label>
+            <input type="checkbox" id="jump">
+            <div class="help">?</div>
+        </div>
+        <div class="TVBlock setStyle">
+            <p class="setBreath" style="--b:21;">修复小电视消失的bug</p>
+            <i class="failD2">☹</i>
+            <label class="btnTVBlock" for="TVBlock">
+                <span></span>
+            </label>
+            <input type="checkbox" id="TVBlock">
+            <div class="help">?</div>
+        </div>
+        <div class="allCir setStyle">
+            <p class="setBreath" style="--b:22;">圆形与正方形交替</p>
+            <i class="failD7">☹</i>
+            <label class="swtAllCir" for="allCir">
+                <span></span>
+            </label>
+            <input type="checkbox" id="allCir">
+            <div class="help">?</div>
+        </div>
+        <div class="playMode setStyle">
+            <p class="setBreath" style="--b:23;">切换播放模式</p>
+            <i class="failD3">☹</i>
+            <span class="pattern">扬声器
+                <span style="color:#fff"> | </span>
+                <span style="color:rgb(40, 167, 69)">0ms</span>
+            </span>
+            <label class="btnPlayMode" for="playMode">
+                <span></span>
+            </label>
+            <input type="checkbox" id="playMode">
+            <div class="help">?</div>
+        </div>
+        <div class="animationSpeed setStyle">
+            <p class="setBreath" style="--b:24;">dance模式跳动速度</p>
+            <i class="failD4" style="right: 15px;">禁止设置</i>
+            <div class="speed">
+                <label class="radSpeed1X radios" for="speed1x">1.0x</label>
+                <label class="radSpeedX5 radios" for="speed2x">0.5x</label>
+            </div>
+            <input type="radio" name="0" id="speed1x">
+            <input type="radio" name="0" id="speedx5">
+            <div class="help">?</div>
+        </div>
+        <div class="filter setStyle">
+            <p class="setBreath" style="--b:25;">滤镜调节</p>
+            <label class="swtFilter" for="filter">
+                <span></span>
+            </label>
+            <input type="checkbox" id="filter">
+            <div class="help">?</div>
+        </div>
+        <div class="brightness setStyle setSonStyle">
+            <p class="setBreath" style="--b:26;">亮度</p>
+            <div class="rangeBox">
+                <div class="range-value">0</div>
+                <div class="range range1">
+                    <span>0</span>
+                    <input type="range" min="2" max="200" value="100">
+                </div>
+                <div class="range-value">200</div>
+            </div>
+        </div>
+        <div class="contrast setStyle setSonStyle">
+            <p class="setBreath" style="--b:27;">对比度</p>
+            <div class="rangeBox">
+                <div class="range-value">0</div>
+                <div class="range range2">
+                    <span>0</span>
+                    <input type="range" min="10" max="200" value="100">
+                </div>
+                <div class="range-value">200</div>
+            </div>
+        </div>
+        <div class="saturate setStyle setSonStyle">
+            <p class="setBreath" style="--b:28;">饱和度</p>
+            <div class="rangeBox">
+                <div class="range-value">0</div>
+                <div class="range range3">
+                    <span>0</span>
+                    <input type="range" min="0" max="200" value="100">
+                </div>
+                <div class="range-value">200</div>
+            </div>
+        </div>
+        <div class="hueRotate setStyle setSonStyle">
+            <p class="setBreath" style="--b:29;">色调</p>
+            <div class="rangeBox">
+                <div class="range-value">-50</div>
+                <div class="range range4">
+                    <span>0</span>
+                    <input type="range" min="-50" max="50" value="0">
+                </div>
+                <div class="range-value">50</div>
+            </div>
+        </div>
+        <div class="TVEyesFol setStyle">
+            <p class="setBreath" style="--b:30;">小电视目光跟随鼠标</p>
+            <i class="failD5">☹</i>
+            <label class="swtTVEyesFol" for="TVEyesFol">
+                <span></span>
+            </label>
+            <input type="checkbox" id="TVEyesFol">
+            <div class="help">?</div>
+        </div>
+        <div class="TVStartPoint setStyle">
+            <p class="setBreath" style="--b:31;">重置小电视及空间位置</p>
+            <i class="failD6">☹</i>
+            <label class="btnTVStartPoint" for="TVStartPoint">
+                <span></span>
+            </label>
+            <input type="checkbox" id="TVStartPoint">
+            <div class="help">?</div>
+        </div>
+    </div>
+
+    <!-- dance模式内样式 -->
+    <div class="apertureTop">
+        <li>
+            <p class="setBreath" style="--b:32;">123</p>
+        </li>
+        <p style="--a:1"></p>
+        <p style="--a:2"></p>
+        <p style="--a:3"></p>
+        <p style="--a:4"></p>
+        <p style="--a:5"></p>
+        <p style="--a:6"></p>
+        <p style="--a:7"></p>
+        <p style="--a:8"></p>
+        <p style="--a:9"></p>
+        <p style="--a:10"></p>
+        <p style="--a:11"></p>
+        <p style="--a:12"></p>
+        <p style="--a:13"></p>
+        <p style="--a:14"></p>
+        <p style="--a:15"></p>
+        <p style="--a:16"></p>
+    </div>
+
+    <!-- JS -->
+    <script src="JS/flexible.js"></script>
+    <script src="JS/VarArr.js"></script>
+    <script src="JS/fn.js"></script>
+    <script src="JS/default.js"></script>
+    <script src="JS/Tips.js"></script>
+    <script src="JS/index.js"></script>
+    <script src="JS/batch.js"></script>
+    <script src="JS/other.js"></script>
+    <script src="JS/dance.js"></script>
+</body>
+
+</html>

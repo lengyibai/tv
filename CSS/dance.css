@@ -1,0 +1,328 @@
+/* 原地Q弹 */
+@keyframes A1 {
+    33% {
+        transform-origin: bottom;
+        transform: scaleY(.25);
+    }
+
+    80% {
+        transform-origin: bottom;
+        transform: scaleY(1);
+    }
+
+    100% {
+        transform-origin: bottom;
+        transform: scaleY(1);
+    }
+}
+
+/* 左边天线摇摆动画(用于原地Q弹) */
+@keyframes AL {
+    0% {
+        transform: translateX(0.9rem) translateY(-0.5rem) translateZ(0px) rotateX(-90deg) rotateZ(-70deg);
+    }
+
+    60% {
+        transform: translateX(0.9rem) translateY(-0.5rem) translateZ(0px) rotateX(-90deg) rotateZ(30deg);
+    }
+
+    100% {
+        transform: translateX(0.9rem) translateY(-0.5rem) translateZ(0px) rotateX(-90deg) rotateZ(-70deg);
+    }
+}
+
+/* 右边天线摇摆动画(用于原地Q弹) */
+@keyframes AR {
+    0% {
+        transform: translateX(-0.767rem) translateY(-0.5rem) translateZ(0px) rotateX(-90deg) rotateZ(-30deg);
+    }
+
+    60% {
+        transform: translateX(-0.767rem) translateY(-0.5rem) translateZ(0px) rotateX(-90deg) rotateZ(70deg);
+    }
+
+    100% {
+        transform: translateX(-0.767rem) translateY(-0.5rem) translateZ(0px) rotateX(-90deg) rotateZ(-30deg);
+    }
+}
+
+/* 上下纵跳 */
+@keyframes B1 {
+    33% {
+        transform-origin: bottom;
+        transform: scaleY(.25);
+    }
+
+    80% {
+        transform-origin: bottom;
+        transform: translateY(-2rem) scaleY(1);
+    }
+
+    100% {
+        transform-origin: bottom;
+        transform: scaleY(1);
+    }
+}
+
+/* 左边天线摇摆动画(用于上下跳) */
+@keyframes BL {
+
+    0% {
+        transform: translateX(0.9rem) translateY(-0.5rem) translateZ(0px) rotateX(-80deg) rotateZ(0deg);
+    }
+
+    65% {
+        transform: translateX(0.9rem) translateY(-0.5rem) translateZ(0px) rotateX(-80deg) rotateZ(-70deg);
+    }
+
+    80% {
+        transform: translateX(0.9rem) translateY(-0.5rem) translateZ(0px) rotateX(-80deg) rotateZ(-70deg);
+    }
+
+    100% {
+        transform: translateX(0.9rem) translateY(-0.5rem) translateZ(0px) rotateX(-80deg) rotateZ(0deg);
+    }
+}
+
+/* 右边天线摇摆动画(用于上下跳) */
+@keyframes BR {
+
+    0% {
+        transform: translateX(-0.767rem) translateY(-0.5rem) translateZ(0px) rotateX(-80deg) rotateZ(0deg);
+    }
+
+    65% {
+        transform: translateX(-0.767rem) translateY(-0.5rem) translateZ(0px) rotateX(-80deg) rotateZ(40deg);
+    }
+
+    80% {
+        transform: translateX(-0.767rem) translateY(-0.5rem) translateZ(0px) rotateX(-80deg) rotateZ(40deg);
+    }
+
+    100% {
+        transform: translateX(-0.767rem) translateY(-0.5rem) translateZ(0px) rotateX(-80deg) rotateZ(0deg);
+    }
+}
+
+/* 上下左右跳（中间停顿） */
+@keyframes C1 {
+    16.6% {
+        transform-origin: bottom;
+        transform: rotateX(0deg) scaleY(.25);
+    }
+
+    33% {
+        transform: translateY(-2rem) rotateX(-15deg) scaleY(1);
+    }
+
+    50% {
+        transform: rotateX(0deg) scaleY(1);
+    }
+
+    66% {
+        transform-origin: bottom;
+        transform: rotateX(0deg) scaleY(.25);
+    }
+
+    83% {
+        transform: translateY(-2rem) rotateX(0deg) scaleY(1);
+    }
+
+    100% {
+        transform: rotateX(0deg) scaleY(1);
+    }
+}
+
+/* 中间停顿左右跳（cube专用） */
+@keyframes C2 {
+    0% {
+
+        transform: translateY(10%) rotateZ(-45deg);
+    }
+
+
+    25% {
+        transform: translateX(-1.667rem) translateY(50%) rotateZ(-45deg);
+    }
+
+    50% {
+        transform: translateY(20%) rotateZ(45deg);
+    }
+
+    75% {
+        transform: translateX(1.667rem) translateY(50%) rotateZ(45deg);
+    }
+
+    100% {
+
+        transform: translateY(10%) rotateZ(-45deg);
+    }
+}
+
+/* 左右横跳Q弹效果 */
+@keyframes D1 {
+    0% {
+        transform-origin: left center;
+        transform: scaleX(1);
+    }
+
+    10% {
+        transform-origin: left center;
+        transform: scaleX(.25);
+    }
+
+    20% {
+        transform-origin: left center;
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform: scaleX(1);
+    }
+
+    60% {
+        transform-origin: right center;
+        transform: scaleX(.25);
+    }
+
+    70% {
+        transform-origin: right center;
+        transform: scaleX(1);
+    }
+}
+
+/* 左边天线摇摆动画(用于左右跳) */
+@keyframes DL {
+    0% {
+        transform: translateX(0.9rem) translateY(-0.5rem) translateZ(0px) rotateX(-90deg) rotateZ(-70deg);
+    }
+
+    60% {
+        transform: translateX(0.9rem) translateY(-0.5rem) translateZ(0px) rotateX(-90deg) rotateZ(30deg);
+    }
+
+    100% {
+        transform: translateX(0.9rem) translateY(-0.5rem) translateZ(0px) rotateX(-90deg) rotateZ(-70deg);
+    }
+}
+
+/* 右边天线摇摆动画(用于左右跳) */
+@keyframes DR {
+    0% {
+        transform: translateX(-0.767rem) translateY(-0.5rem) translateZ(0px) rotateX(-90deg) rotateZ(-30deg);
+    }
+
+    60% {
+        transform: translateX(-0.767rem) translateY(-0.5rem) translateZ(0px) rotateX(-90deg) rotateZ(70deg);
+    }
+
+    100% {
+        transform: translateX(-0.767rem) translateY(-0.5rem) translateZ(0px) rotateX(-90deg) rotateZ(-30deg);
+    }
+}
+
+/* 左右横跳（cube专用） */
+@keyframes D2 {
+    0% {
+
+        transform: translateY(30%) rotateZ(-45deg);
+    }
+
+    10% {
+        transform: translateY(30%) rotateZ(-45deg);
+    }
+
+    50% {
+        transform: translateY(30%) rotateZ(45deg);
+    }
+
+    60% {
+        transform: translateY(30%) rotateZ(45deg);
+    }
+
+    100% {
+
+        transform: translateY(30%) rotateZ(-45deg);
+    }
+}
+
+
+/* 原地Q弹  */
+@keyframes E1 {
+    16.6% {
+        transform-origin: bottom;
+        transform: scaleY(.25);
+    }
+
+    33% {
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(1);
+    }
+
+    66% {
+        transform-origin: bottom;
+        transform: scaleY(.25);
+    }
+
+    83% {
+        transform: scaleY(1);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+/* 旋转动画（cube专用） */
+@keyframes E2 {
+    0% {
+        transform: translateY(20%) rotateY(0deg) rotateX(45deg)
+    }
+
+    50% {
+        transform: translateY(20%) rotateY(180deg) rotateX(45deg)
+    }
+
+    100% {
+        transform: translateY(20%) rotateY(360deg) rotateX(45deg)
+    }
+}
+
+/* 光圈动画 */
+@keyframes apertureTop {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+
+        transform: scale(1.25);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 子光圈动画 */
+@keyframes apertureTopSon {
+    44% {
+        opacity: 0;
+    }
+
+    45% {
+
+        transform: rotateZ(180deg) scale(1.25);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotateZ(360deg) scale(3);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,320 @@
+/********** 开屏动画 **********/
+.OSA {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.leftObs,
+.rightObs {
+    position: absolute;
+    width: 50%;
+    height: 10%;
+    background-color: #000;
+    animation: 2s cubic-bezier(.5, 0, .5, 1) forwards;
+    z-index: 100;
+}
+
+
+.leftObs:nth-child(1) {
+    animation-delay: 0.5s;
+    animation-name: leftObs1;
+}
+
+@keyframes leftObs1 {
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.leftObs:nth-child(2) {
+    transform: translateY(100%);
+    animation-delay: 0.6s;
+    animation-name: leftObs2;
+}
+
+@keyframes leftObs2 {
+    100% {
+        transform: translateX(-100%) translateY(100%);
+    }
+}
+
+.leftObs:nth-child(3) {
+    transform: translateY(200%);
+    animation-delay: 0.7s;
+    animation-name: leftObs3;
+}
+
+@keyframes leftObs3 {
+    100% {
+        transform: translateX(-100%) translateY(200%);
+    }
+}
+
+.leftObs:nth-child(4) {
+    transform: translateY(300%);
+    animation-delay: 0.8s;
+    animation-name: leftObs4;
+}
+
+@keyframes leftObs4 {
+    100% {
+        transform: translateX(-100%) translateY(300%);
+    }
+}
+
+.leftObs:nth-child(5) {
+    transform: translateY(400%);
+    animation-delay: 0.9s;
+    animation-name: leftObs5;
+}
+
+@keyframes leftObs5 {
+    100% {
+        transform: translateX(-100%) translateY(400%);
+    }
+}
+
+.leftObs:nth-child(6) {
+    transform: translateY(500%);
+    animation-delay: 1s;
+    animation-name: leftObs6;
+}
+
+@keyframes leftObs6 {
+    100% {
+        transform: translateX(-100%) translateY(500%);
+    }
+}
+
+.leftObs:nth-child(7) {
+    transform: translateY(600%);
+    animation-delay: 0.9s;
+    animation-name: leftObs7;
+}
+
+@keyframes leftObs7 {
+    100% {
+        transform: translateX(-100%) translateY(600%);
+    }
+}
+
+.leftObs:nth-child(8) {
+    transform: translateY(700%);
+    animation-delay: 0.8s;
+    animation-name: leftObs8;
+}
+
+@keyframes leftObs8 {
+    100% {
+        transform: translateX(-100%) translateY(700%);
+    }
+}
+
+.leftObs:nth-child(9) {
+    transform: translateY(800%);
+    animation-delay: 0.7s;
+    animation-name: leftObs9;
+}
+
+@keyframes leftObs9 {
+    100% {
+        transform: translateX(-100%) translateY(800%);
+    }
+}
+
+.leftObs:nth-child(10) {
+    transform: translateY(900%);
+    animation-delay: 0.6s;
+    animation-name: leftObs10;
+}
+
+@keyframes leftObs10 {
+    100% {
+        transform: translateX(-100%) translateY(900%);
+    }
+}
+
+.leftObs:nth-child(11) {
+    transform: translateY(1000%);
+    animation-delay: 0.5s;
+    animation-name: leftObs11;
+}
+
+@keyframes leftObs11 {
+    100% {
+        transform: translateX(-100%) translateY(1000%);
+    }
+}
+
+/**********  右边 **********/
+.rightObs {
+    right: 0;
+}
+
+.rightObs:nth-child(1) {
+    animation-delay: 0.5s;
+    animation-name: rightObs1;
+}
+
+@keyframes rightObs1 {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.rightObs:nth-child(2) {
+    transform: translateY(100%);
+    animation-delay: 0.6s;
+    animation-name: rightObs2;
+}
+
+@keyframes rightObs2 {
+    100% {
+        transform: translateX(100%) translateY(100%);
+    }
+}
+
+.rightObs:nth-child(3) {
+    transform: translateY(200%);
+    animation-delay: 0.7s;
+    animation-name: rightObs3;
+}
+
+@keyframes rightObs3 {
+    100% {
+        transform: translateX(100%) translateY(200%);
+    }
+}
+
+.rightObs:nth-child(4) {
+    transform: translateY(300%);
+    animation-delay: 0.8s;
+    animation-name: rightObs4;
+}
+
+@keyframes rightObs4 {
+    100% {
+        transform: translateX(100%) translateY(300%);
+    }
+}
+
+.rightObs:nth-child(5) {
+    transform: translateY(400%);
+    animation-delay: 0.9s;
+    animation-name: rightObs5;
+}
+
+@keyframes rightObs5 {
+    100% {
+        transform: translateX(100%) translateY(400%);
+    }
+}
+
+.rightObs:nth-child(6) {
+    transform: translateY(500%);
+    animation-delay: 1s;
+    animation-name: rightObs6;
+}
+
+@keyframes rightObs6 {
+    100% {
+        transform: translateX(100%) translateY(500%);
+    }
+}
+
+.rightObs:nth-child(7) {
+    transform: translateY(600%);
+    animation-delay: 0.9s;
+    animation-name: rightObs7;
+}
+
+@keyframes rightObs7 {
+    100% {
+        transform: translateX(100%) translateY(600%);
+    }
+}
+
+.rightObs:nth-child(8) {
+    transform: translateY(700%);
+    animation-delay: 0.8s;
+    animation-name: rightObs8;
+}
+
+@keyframes rightObs8 {
+    100% {
+        transform: translateX(100%) translateY(700%);
+    }
+}
+
+.rightObs:nth-child(9) {
+    transform: translateY(800%);
+    animation-delay: 0.7s;
+    animation-name: rightObs9;
+}
+
+@keyframes rightObs9 {
+    100% {
+        transform: translateX(100%) translateY(800%);
+    }
+}
+
+.rightObs:nth-child(10) {
+    transform: translateY(900%);
+    animation-delay: 0.6s;
+    animation-name: rightObs10;
+}
+
+@keyframes rightObs10 {
+    100% {
+        transform: translateX(100%) translateY(900%);
+    }
+}
+
+.rightObs:nth-child(11) {
+    transform: translateY(1000%);
+    animation-delay: 0.5s;
+    animation-name: rightObs11;
+}
+
+@keyframes rightObs11 {
+    100% {
+        transform: translateX(100%) translateY(1000%);
+    }
+}
+
+
+/********** 左黑块样式、倒放动画 **********/
+.leftObsBack,
+.rightObsBack {
+    position: absolute;
+    width: 50%;
+    height: 100vh;
+    background-color: #000;
+    animation: 1s .5s cubic-bezier(.5, 0, .5, 1) forwards;
+    z-index: 999;
+}
+
+.leftObsBack {
+    transform: translateX(-100%);
+}
+
+.rightObsBack {
+    right: 0;
+    transform: translateX(100%);
+}
+
+.leftAnimation {
+    animation: LRAnimation 1s ease .5s forwards;
+}
+
+.rightAnimation {
+    animation: LRAnimation 1s ease .5s forwards;
+}
+
+@keyframes LRAnimation {
+    100% {
+        transform: translateX(0%);
+    }
+}

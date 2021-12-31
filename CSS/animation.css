@@ -1,0 +1,355 @@
+/* 空间开场动画 */
+@keyframes openRotate {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) scale3d(.05, .05, .05);
+    }
+
+    33% {
+        transform: rotateX(-30deg) rotateY(-90deg) scale3d(.05, .05, .05);
+    }
+
+    100% {
+        transform: rotateX(0deg) rotateY(-360deg);
+    }
+}
+
+/* 自动旋转用的动画 */
+@keyframes rotate {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    33% {
+        transform: rotateX(-45deg) rotateY(-120deg);
+    }
+
+    66% {
+        transform: rotateX(45deg) rotateY(-240deg);
+    }
+
+    100% {
+        transform: rotateX(0deg) rotateY(-360deg);
+    }
+}
+
+@keyframes breath {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+/* 上帝视角专属旋转样式 */
+@keyframes godRotate {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) scale3d(.1, .1, .1);
+        ;
+    }
+
+    33% {
+        transform: rotateX(-45deg) rotateY(-120deg) scale3d(.1, .1, .1);
+    }
+
+    66% {
+        transform: rotateX(45deg) rotateY(-240deg) scale3d(.1, .1, .1);
+    }
+
+    100% {
+        transform: rotateX(0deg) rotateY(-360deg) scale3d(.1, .1, .1);
+    }
+}
+
+/* 出场旋转Q弹效果动画 */
+@keyframes cube0 {
+    40% {
+        transform: rotateX(-31deg) rotateY(-45deg) rotateY(-360deg) scale3d(1.5, .75, 1);
+    }
+
+    60% {
+        transform: rotateX(-31deg) rotateY(-45deg) rotateY(-360deg) scale3d(.75, 1.1, 1);
+    }
+
+    80% {
+        transform: rotateX(-31deg) rotateY(-45deg) rotateY(-360deg) scale3d(1.25, 0.95, 1);
+    }
+
+    100% {
+        transform: rotateX(-31deg) rotateY(-45deg) rotateY(-360deg) scale3d(1, 1, 1);
+    }
+}
+
+/* 简单的Q弹回弹效果 */
+@keyframes QSpring {
+    25% {
+        transform: translateX(0) scaleX(1.25);
+    }
+
+    50% {
+        transform: translateX(0) scaleX(0.85);
+    }
+
+    75% {
+        transform: translateX(0) scaleX(1.1);
+    }
+
+    100% {
+        transform: translateX(0) scaleX(1);
+    }
+}
+
+@keyframes click {
+    33% {
+        transform: scale(0.75);
+    }
+
+    66% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* 头像Q弹动画 */
+@keyframes headImgUp {
+    0% {
+        transform: scale(0);
+    }
+
+    33% {
+        transform: scale(1.25);
+    }
+
+    66% {
+        transform: scale(0.85);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 开启上帝视角动画 */
+@keyframes onGod {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateX(-31deg) rotateY(-45deg) scale3d(.1, .1, .1);
+    }
+}
+
+/* 关闭上帝视角动画 */
+@keyframes offGod {
+    0% {
+        transform: rotateX(-31deg) rotateY(-45deg) scale3d(.1, .1, .1);
+    }
+
+    100% {
+        transform: rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+    }
+}
+
+/* 正方体每个面的出场动画 */
+@keyframes cube1 {
+    50% {
+        transform: translateY(.9rem) translateZ(2rem) rotateX(-90deg);
+    }
+
+    100% {
+        transform: translateZ(.667rem);
+    }
+}
+
+@keyframes cube2 {
+    50% {
+        transform: rotateY(90deg) translateY(.9rem) translateZ(2rem) rotateX(-90deg);
+    }
+
+    100% {
+        transform: rotateY(90deg) translateZ(1rem);
+    }
+}
+
+@keyframes cube3 {
+    50% {
+        transform: rotateY(180deg) translateY(.9rem) translateZ(2rem)rotateX(-90deg);
+    }
+
+    100% {
+        transform: rotateY(180deg) translateZ(.667rem);
+    }
+}
+
+@keyframes cube4 {
+    50% {
+        transform: rotateY(-90deg) translateY(.9rem) translateZ(2rem)rotateX(-90deg);
+    }
+
+    100% {
+        transform: rotateY(-90deg) translateZ(1rem);
+    }
+}
+
+@keyframes cube5 {
+    100% {
+        transform: rotateX(90deg) translateZ(.733rem);
+    }
+}
+
+@keyframes cube6 {
+    100% {
+        transform: rotateX(-90deg) translateZ(.733rem);
+    }
+}
+
+/* 左边天线摇摆动画 */
+@keyframes fiveLiLSon {
+    25% {
+        transform: translateX(.9rem) translateY(-0.5rem) translateZ(.027rem) rotateX(-80deg) rotateZ(0deg);
+    }
+
+    50% {
+        transform: translateX(.9rem) translateY(-0.5rem) translateZ(.027rem) rotateX(-80deg) rotateZ(-75deg);
+    }
+
+    75% {
+        transform: translateX(.9rem) translateY(-0.5rem) translateZ(.027rem) rotateX(-80deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: translateX(.9rem) translateY(-0.5rem) translateZ(.027rem) rotateX(-80deg) rotateZ(-75deg);
+    }
+}
+
+/* 右边天线摇摆动画 */
+@keyframes fiveLiRSon {
+    25% {
+        transform: translateX(-0.767rem) translateY(-0.5rem) translateZ(0px) rotateX(-80deg) rotateZ(0deg);
+    }
+
+    50% {
+        transform: translateX(-0.767rem) translateY(-0.5rem) translateZ(0px) rotateX(-80deg) rotateZ(30deg);
+    }
+
+    75% {
+        transform: translateX(-0.767rem) translateY(-0.5rem) translateZ(0px) rotateX(-80deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: translateX(-0.767rem) translateY(-0.5rem) translateZ(0px) rotateX(-80deg) rotateZ(30deg);
+    }
+}
+
+/* 伴随天线动画的蹦跶动画 */
+@keyframes Skipping {
+    25% {
+        transform: scaleY(.5);
+    }
+
+    50% {
+        transform: translateY(-2rem) scaleY(1);
+    }
+
+    60% {
+        transform: scaleY(1);
+    }
+
+    70% {
+        transform: scaleY(.5);
+    }
+
+    80% {
+        transform: scaleY(1.25);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes TVSleep {
+    0% {
+        transform: scaleY(1.02);
+    }
+
+    40% {
+        transform: scaleY(.98);
+    }
+
+    60% {
+        transform: scaleY(.98);
+    }
+
+    100% {
+        transform: scaleY(1.02);
+    }
+}
+
+@keyframes TVWalk {
+    0% {
+        transform: scaleY(1);
+    }
+
+    33% {
+        transform: scaleY(1.2);
+    }
+
+    66% {
+        transform: scaleY(0.9);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+
+}
+
+/* 小电视苏醒，天线轻微摆动 */
+@keyframes liLSon {
+    0% {
+        transform: translateX(.9rem) translateY(-0.5rem) translateZ(.027rem) rotateX(-90deg) rotateZ(-60deg);
+    }
+
+    33% {
+        transform: translateX(.9rem) translateY(-0.5rem) translateZ(.027rem) rotateX(-90deg) rotateZ(-75deg);
+    }
+
+    66% {
+        transform: translateX(.9rem) translateY(-0.5rem) translateZ(.027rem) rotateX(-90deg) rotateZ(-25deg);
+    }
+
+    100% {
+        transform: translateX(.9rem) translateY(-0.5rem) translateZ(.027rem) rotateX(-90deg) rotateZ(-60deg);
+    }
+}
+
+@keyframes liRSon {
+    0% {
+        transform: translateX(-0.767rem) translateY(-0.5rem) translateZ(0px) rotateX(-90deg) rotateZ(30deg);
+    }
+
+    33% {
+        transform: translateX(-0.767rem) translateY(-0.5rem) translateZ(0px) rotateX(-90deg) rotateZ(40deg);
+    }
+
+    66% {
+        transform: translateX(-0.767rem) translateY(-0.5rem) translateZ(0px) rotateX(-90deg) rotateZ(10deg);
+    }
+
+    100% {
+        transform: translateX(-0.767rem) translateY(-0.5rem) translateZ(0px) rotateX(-90deg) rotateZ(30deg);
+    }
+}

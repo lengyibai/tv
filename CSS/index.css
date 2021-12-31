@@ -1,0 +1,1052 @@
+:root {
+  /* 颜色 */
+  --dirtyWhite: #ccc;
+  --red: rgb(220, 53, 69);
+  /* var(--red) */
+  --orange: rgb(253, 126, 20);
+  /* var(--orange) */
+  --yellow: rgb(255, 193, 7);
+  /* var(--yellow) */
+  --green: rgb(40, 167, 69);
+  /* var(--green) */
+  --cyan: rgb(23, 162, 184);
+  /* var(--cyan) */
+  --blue: rgb(0, 123, 255);
+  /* var(--blue) */
+  --purple: rgb(102, 16, 242);
+  /* var(--purple) */
+  /* 浅色 */
+  --redSon: rgb(255, 182, 182);
+  /* var(--redSon) */
+  --orangeSon: rgb(255, 215, 182);
+  /* var(--orangeSon) */
+  --yellowSon: rgb(255, 238, 185);
+  /* var(--yellowSon) */
+  --greenSon: rgb(192, 253, 206);
+  /* var(--greenSon) */
+  --cyanSon: rgb(186, 246, 255);
+  /* var(--cyanSon) */
+  --blueSon: rgb(182, 217, 255);
+  /* var(--blueSon) */
+  --purpleSon: rgb(209, 181, 255);
+  /* var(--purpleSon) */
+  --fuchsinSon: rgb(255, 182, 216);
+  /* var(--fuchsinSon) */
+  /* 所有按钮阴影 */
+  --btnBoxShadow: 0 0 3px 0 rgba(0, 0, 0, 0.75) inset;
+  /* var(--btnBoxShadow) */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px dashed #ccc; */
+  transition: all 0.25s ease-out;
+  color: #fff;
+}
+
+html {
+  position: fixed;
+  top: 0;
+  left: 0;
+  user-select: none;
+  /* 禁止双击出现蓝色背景 */
+}
+
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  perspective: 1000px;
+  font-size: 0.1rem;
+  overflow: hidden;
+}
+
+/* 滚动条 */
+
+*::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  /*滚动条里面小正方体*/
+  background: rgba(255, 255, 255, 0.25);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(255, 255, 255, 0.5);
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: rgb(255, 255, 255, 0.75);
+}
+
+li {
+  list-style: none;
+}
+
+/* 出场左右两边跳过按钮 */
+
+.skipAnimation,
+.skipAnimationAll {
+  position: absolute;
+  top: -53px;
+  padding: 0.067rem 0.133rem;
+  font-family: '方正兰亭超细黑简体';
+  text-align: center;
+  font-size: 0.2rem;
+  color: #fff;
+  background-color: #000;
+  z-index: 100;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0px 0px 10px 2px #000;
+  text-shadow: 0 2px 5px #fff, 0 -1px 5px #fff, 0 0px 10px #fff;
+}
+
+.skipAnimation {
+  left: 0;
+  border-radius: 0 0 10px 0;
+}
+
+.skipAnimationAll {
+  right: 0;
+  border-radius: 0 0 0 10px;
+}
+
+.skipAnimation:hover,
+.skipAnimationAll:hover {
+  background-color: #fff;
+  box-shadow: 0px 0px 15px 5px #fff;
+  text-shadow: 0px 2px 2px #000;
+}
+
+/* 小电视的话 */
+
+.TEXT {
+  display: none;
+  position: absolute;
+  width: 5.18rem;
+  bottom: 0;
+  padding: 0.067rem 0.133rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+.TEXT::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.TEXT > h2 {
+  font-size: 0.3rem;
+  text-align: center;
+  text-shadow: 2px 2px 2px #000;
+  line-height: 0.367rem;
+  text-shadow: 1px 1px 3px #000, 0 0 50px, 0 0 5px;
+}
+
+/* 来自谁? */
+
+.assistant {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  transition: all 0.5s;
+  opacity: 0;
+  font-weight: bold;
+}
+
+.assistant > h1 {
+  position: absolute;
+  top: 0;
+  font-size: 0.667rem;
+  text-shadow: 0 0 3px #000, 0 0 15px, 0 0 100px;
+}
+
+.assistant > div {
+  position: absolute;
+  bottom: 0;
+}
+
+/* 头像及对话的父盒子 */
+
+.dialogue {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  left: 0;
+  bottom: 10px;
+  padding: 15px;
+  font-size: 0.233rem;
+  line-height: 0.267rem;
+  text-shadow: 0 1px 3px #000, 0 0 35px, 0 0 10px;
+}
+
+/* 头像 */
+
+.dialogue > img {
+  width: 0.5rem;
+  height: 0.5rem;
+  transform: scale(0);
+  margin-bottom: 0.167rem;
+  border-radius: 50%;
+  box-shadow: 0 0 15px 3px;
+  cursor: pointer;
+}
+
+.dialogue > img:hover {
+  box-shadow: 0 0 30px 5px;
+}
+
+/* 选择访问方式的父盒子 */
+
+.skip {
+  position: relative;
+  display: flex;
+  right: 0;
+  bottom: 0.133rem;
+  margin-top: 0.2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+  text-shadow: 0 1px 3px #000, 0 0 35px, 0 0 10px;
+}
+
+/* 选择访问方式 */
+
+.skip > h2 {
+  margin-bottom: 0.2rem;
+  font-size: 0.333rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* 访问字体 */
+
+.skip > p {
+  width: 25%;
+  font-size: 0.133rem;
+  text-align: center;
+}
+
+/* 第一次访问和跳过 */
+
+.noSkip,
+.skipStart {
+  padding: 0.067rem 0;
+  cursor: pointer;
+}
+
+.noSkip:hover,
+.skipStart:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 5px 2px, 0 0 5px 0px inset;
+}
+
+.noSkip:active,
+.skipStart:active {
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 10px 3px, 0 0 5px 3px inset;
+}
+
+/* 弹窗 */
+
+.alert {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  border-top: none;
+  border-radius: 0 0 50% 50%;
+  opacity: 0;
+  z-index: 101;
+  font-size: 0.1rem;
+  transition: all 0.5s;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+}
+
+/* 空间 */
+
+.room {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3000px;
+  height: 1500px;
+  transform-style: preserve-3d;
+  transition: all 0.075s ease-out;
+}
+
+/* 空间墙 */
+
+.wall {
+  position: absolute;
+  width: 3000px;
+  height: 3000px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+}
+
+/* 全景图 */
+
+.wall > .wallImg {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0s;
+  -webkit-user-drag: none;
+}
+
+.wall:nth-child(1) {
+  background: var(--red);
+  transform: translateZ(-1498px);
+}
+
+.wall:nth-child(2) {
+  background: var(--blue);
+  transform: translateX(1498px) rotateY(270deg);
+}
+
+.wall:nth-child(3) {
+  background: var(--purple);
+  transform: translateZ(1498px) rotateY(180deg);
+}
+
+.wall:nth-child(4) {
+  background: var(--green);
+  transform: translateX(-1498px) rotateY(90deg);
+}
+
+.wall:nth-child(5) {
+  background: var(--yellow);
+  transform: translateY(-1498px) rotateX(270deg);
+}
+
+.wall:nth-child(6) {
+  background: var(--orange);
+  transform: translateY(1498px) rotateX(90deg);
+}
+
+/* 正方体头顶天线 */
+
+.left,
+.leftSon,
+.right,
+.rightSon {
+  position: absolute;
+  width: 0.133rem;
+  height: 0.967rem;
+  background-color: #000;
+  transform-origin: bottom;
+  border-radius: 0.067rem;
+}
+
+.left,
+.leftSon {
+  left: 0;
+  transform: translateX(0.9rem) translateY(-0.5rem) translateZ(0.027rem)
+    rotateX(-90deg) rotateZ(-60deg);
+}
+
+.right,
+.rightSon {
+  right: 0;
+  transform: translateX(-0.767rem) translateY(-0.5rem) translateZ(0px)
+    rotateX(-90deg) rotateZ(30deg);
+}
+
+/* 正方体大盒子 */
+
+.cube,
+.cubeSon {
+  position: absolute;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.075s ease-out;
+  transform-style: preserve-3d;
+  z-index: -1;
+  transform-origin: bottom;
+}
+
+.cube {
+  position: relative;
+  transition: all 0.075s ease-out;
+  flex: 1;
+  animation: TVSleep 4s infinite;
+}
+
+.cubeSon {
+  position: fixed;
+  transition: all 1s ease-out;
+  opacity: 0.15 !important;
+  z-index: 1;
+  perspective: 1000px;
+}
+
+/* 正方体盒子 */
+
+.cube > ul,
+.cubeSon > ul {
+  position: absolute;
+  display: flex;
+  width: 2rem;
+  height: 1.467rem;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.075s ease-out;
+  transform-style: preserve-3d;
+  animation-play-state: paused;
+}
+
+.cubeSon > ul {
+  display: none;
+}
+
+/* 正方体六个面 */
+
+.cube > ul > li,
+.cubeSon > ul > li {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 1.467rem;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 0.1rem solid #000;
+  transition: all 1s;
+  animation: 0.5s ease-out forwards;
+  animation-delay: calc(1.5s * var(--i));
+  transform-style: preserve-3d;
+}
+
+.cube > ul > li img {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  transition: all 1s ease-out;
+  -webkit-user-drag: none;
+}
+
+.cube > ul > li:nth-child(1),
+.cubeSon > ul > li:nth-child(1) {
+  transform: translateY(0.333rem) translateZ(6.667rem) rotateX(-90deg);
+  animation-name: cube1;
+  font-size: 1rem;
+  overflow: hidden;
+}
+
+.cube > ul > li:nth-child(2),
+.cubeSon > ul > li:nth-child(2) {
+  width: 1.333rem;
+  transform: rotateY(90deg) translateY(1rem) translateZ(6.667rem)
+    rotateX(-90deg);
+  animation-name: cube2;
+}
+
+.cube > ul > li:nth-child(3),
+.cubeSon > ul > li:nth-child(3) {
+  animation-name: cube3;
+  transform: rotateY(180deg) translateY(1rem) translateZ(6.667rem)
+    rotateX(-90deg);
+}
+
+.cube > ul > li:nth-child(4),
+.cubeSon > ul > li:nth-child(4) {
+  width: 1.333rem;
+  animation-name: cube4;
+  transform: rotateY(-90deg) translateY(1rem) translateZ(6.667rem)
+    rotateX(-90deg);
+}
+
+.cube > ul > li:nth-child(5),
+.cubeSon > ul > li:nth-child(5) {
+  height: 1.333rem;
+  animation-name: cube5;
+  transform: rotateX(90deg) translateZ(6.667rem);
+}
+
+.cube > ul > li:nth-child(6),
+.cubeSon > ul > li:nth-child(6) {
+  height: 1.333rem;
+  animation-name: cube6;
+  transform: rotateX(-90deg) translateZ(10rem);
+}
+
+/* 隐藏入口点 */
+
+.TVIntroduce {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+/* 小电视隐藏对话 */
+
+.introduce {
+  position: absolute;
+  width: 0.067rem;
+  height: 0.067rem;
+  border-radius: 50%;
+  background-color: #fff;
+  transform: translateZ(0.033rem);
+}
+
+.introduce::after {
+  display: none;
+  text-align: center;
+  content: '被你发现了，那就点击我吧！';
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.introduce:hover,
+.introduce:hover::after {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+}
+
+/* 设置栏左右收放按钮 */
+
+.leftSlide,
+.rightSlide {
+  position: absolute;
+  top: 0;
+  display: none;
+  cursor: pointer;
+  padding: 0 5px;
+  transition: all 0.5s;
+  z-index: 99;
+  font-size: 20px;
+  opacity: 0;
+  text-shadow: 0 0 6px #fff, 0 0 3px #fff, 0 0 9px #fff;
+}
+
+.leftSlide {
+  left: 0;
+}
+
+.rightSlide {
+  right: 0;
+}
+
+/* 左设置 */
+
+.change {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.4rem;
+  min-width: 300px;
+  height: 100vh;
+  padding: 15px 35px;
+  padding-bottom: 350px;
+  background-color: rgb(0, 0, 0, 0.25);
+  z-index: 98;
+  font-size: 0.1rem;
+  transition: all 0.5s ease;
+  transform: translateX(-100%) scale(0.75);
+  overflow-y: auto;
+}
+
+/* 大标题 */
+
+h1 {
+  font-size: 0.133rem;
+  padding: 0.1rem 0 0 0;
+  margin-bottom: 0.1rem;
+  text-shadow: 0 1px 3px #000, 0 0 20px;
+}
+
+/* 设置文字 */
+
+p {
+  text-shadow: 0 1px 3px #000, 0 0 5px, 0 0 15px;
+}
+
+/* 文字呼吸 */
+
+.setBreath {
+  animation: breath 1s infinite;
+  animation-delay: calc(0.25s * var(--b));
+}
+
+/* 所有输入框 */
+
+input[type='text'] {
+  outline: none;
+  border: none;
+  padding-left: 1px;
+  line-height: 20px;
+  background-color: rgb(255, 255, 255, 0.25);
+  width: 0px;
+  box-shadow: var(--btnBoxShadow);
+  transition: all 0.75s cubic-bezier(0, 0, 0, 2);
+  opacity: 0;
+}
+
+/* 输入框内灰字  */
+
+input[type='text']::placeholder {
+  color: #ccc;
+}
+
+/* 输入框与输入块共同父盒子 */
+
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+}
+
+/* 输入块 */
+
+.inputLight {
+  position: relative;
+  text-align: center;
+  line-height: 19px;
+  min-width: 19px;
+  min-height: 19px;
+  font-size: 15px;
+  left: 0;
+  margin: 0.033rem 5px;
+  padding: 0 5px;
+  background-color: rgb(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.75s;
+}
+
+.inputLight:hover {
+  background-color: rgb(255, 255, 255, 0.85);
+}
+
+input[type='checkbox'],
+input[type='button'],
+input[type='radio'] {
+  display: none;
+}
+
+label {
+  margin: 0.033rem 0;
+}
+
+/* 所有开关样式 */
+
+label[class^='swt'],
+label[class^='btn'] {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 36px;
+  height: 20px;
+  cursor: pointer;
+  margin-right: 30px;
+  background-color: rgb(255, 255, 255, 0.25);
+  box-shadow: var(--btnBoxShadow);
+}
+
+label[class^='btn'] {
+  justify-content: center;
+}
+
+/* 所有开关样式的拉杆样式 */
+
+label[class^='swt'] > span,
+label[class^='btn'] > span {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  margin-left: 2.5px;
+  margin-right: 2.5px;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.75);
+  background-color: rgba(255, 255, 255, 0.25);
+  transition: all 1s 0.35s cubic-bezier(0, 0, 0, 2);
+}
+
+label[class^='swt'] > span {
+  left: 3px;
+}
+
+label[class^='btn'] > span {
+  width: 10px;
+  height: 10px;
+  margin: 0;
+}
+
+label[class^='swt']:hover > span,
+label[class^='btn']:hover > span {
+  transition: all 0.5s cubic-bezier(0, 0, 0, 2);
+  background-color: #fff !important;
+  box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.75);
+}
+
+label[class^='btn']:active > span {
+  transition: all 0.1s;
+  width: 100%;
+  height: 100%;
+}
+
+/* 每个主要设置项默认样式 */
+
+.setStyle {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.setSonStyle {
+  height: 0;
+  transform: scale(0);
+  transition: all 0.5s;
+}
+
+.change p,
+.dance p {
+  position: absolute;
+  left: 0;
+}
+
+/* 帮助按钮 */
+
+.help {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  background-color: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  border-radius: 25%;
+  text-shadow: 0 0 3px #fff;
+  transition: all 1s 0.35s cubic-bezier(0, 0, 0, 2);
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+.help:hover {
+  transition: all 0s;
+  background-color: rgba(255, 255, 255, 0.75);
+  text-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px #fff;
+}
+
+/* 红字及表情 */
+
+i {
+  position: relative;
+  display: none;
+  right: 5px;
+  font-size: 0.1rem;
+  opacity: 1;
+  color: red;
+}
+
+/* 滑动条 */
+
+.rangeBox {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1.167rem;
+  min-width: 115px;
+  right: 0.2rem;
+}
+
+.range {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0.667rem;
+  min-width: 64px;
+  border-radius: 10px;
+}
+
+/* 左右数字 */
+
+.range-value {
+  position: relative;
+  font-size: 0.12rem;
+  color: #fff;
+}
+
+.range .range-value:nth-of-type(1) {
+  left: -0.2rem;
+}
+
+.range .range-value:nth-of-type(2) {
+  right: -0.333rem;
+}
+
+/* 轨道 */
+
+.range input {
+  -webkit-appearance: none;
+  width: 0.767rem;
+  min-width: 75px;
+  position: absolute;
+  height: 2.4px;
+  background-color: #000;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+/* 滑块 */
+
+.range input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0.1rem;
+  height: 0.1rem;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* 数字框 */
+
+.range span {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  top: -0.5rem;
+  left: 50%;
+  font-size: 0.167rem;
+  transform: translateX(-50%) scale(0);
+  transform-origin: bottom;
+  transition: transform 0.25s ease-in-out;
+  line-height: 0.333rem;
+}
+
+.range:active > span {
+  transform: translateX(-50%) scale(1);
+}
+
+.range span::after {
+  /* 使用伪类单独给数字添加样式 */
+  content: '';
+  position: absolute;
+  width: 0.333rem;
+  height: 0.333rem;
+  background-color: #000;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  z-index: -1;
+}
+
+.hueRotate .rangeBox {
+  right: 0.3rem;
+}
+
+/* dance模式 */
+
+.dance {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.4rem;
+  min-width: 300px;
+  height: 100vh;
+  padding: 15px 35px;
+  background-color: rgb(0, 0, 0, 0.25);
+  z-index: 98;
+  font-size: 0.1rem;
+  transition: all 0.5s ease;
+  transform: translateX(100%) scale(0.75);
+  overflow-y: auto;
+}
+
+.danceBg {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgb(89, 19, 57), rgb(42, 11, 26));
+  opacity: 0;
+  z-index: -1;
+}
+
+.countDown {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  z-index: 5;
+}
+
+.countDown > h1 {
+  color: #fff;
+  text-shadow: 0 0 15px, 0 0 50px;
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+.apertureTop {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* 中心光圈 */
+
+.apertureTop > li {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  transition: all 0.5s;
+  opacity: 0;
+  background-color: rgb(20, 20, 20);
+  z-index: 2;
+}
+
+/* 中心光圈数字 */
+
+.apertureTop > li > p {
+  font-size: 1.667rem;
+  color: #fff;
+  text-shadow: 0 0 15px, 0 0 50px;
+}
+
+/* 背后光圈 */
+
+.apertureTop > p {
+  position: fixed;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 0.133rem solid #fff;
+  transform: scale(1.1);
+  opacity: 0;
+  animation-delay: calc(0.46s * var(--a));
+  z-index: 1;
+}
+
+.expression > span {
+  display: none;
+  font-size: 0.833rem;
+  color: #fff;
+  font-weight: normal;
+  text-shadow: 0 0px 1px #000;
+}
+
+.style > p {
+  margin-bottom: 10px;
+}
+
+.style > p > span {
+  padding: 1px 5px;
+}
+
+.pattern {
+  position: relative;
+  right: 5px;
+  color: var(--yellow);
+}
+
+.speed {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80px;
+  height: 20px;
+  cursor: pointer;
+  margin: 0.033rem 30px 0.0333rem 0;
+}
+
+label[class^='rad'] {
+  position: relative;
+  align-items: center;
+  text-align: center;
+  line-height: 20px;
+  font-size: 10px;
+  width: 36px;
+  height: 20px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255, 0.25);
+  box-shadow: var(--btnBoxShadow);
+}
+
+label[class^='rad']:nth-child(1) {
+  transform: translateX(0px) scale(1);
+  text-shadow: 0 0 5px var(--cyan);
+  background-color: rgb(186, 246, 255, 0.75);
+  color: var(--cyan);
+  transition: all 0.5s;
+}
+
+label[class^='rad']:nth-child(1):hover {
+  transition: all 0.25s;
+  background-color: var(--cyanSon) !important;
+}
+
+label[class^='rad']:nth-child(2) {
+  transform: translateX(0px) scale(1);
+  text-shadow: 0 0 5px var(--green);
+  background-color: var(--greenSon);
+  color: var(--green);
+  box-shadow: 0px 0px 10px 0px rgba(192, 253, 206);
+  border-radius: 20px;
+  transition: all 0.5s;
+}
+
+label[class^='rad']:nth-child(2):hover {
+  transition: all 0.25s;
+  background-color: var(--greenSon) !important;
+}
