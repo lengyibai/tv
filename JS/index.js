@@ -1287,6 +1287,7 @@ speed368_736 = 3.68 * speed;
 speed920_2760 = 1840 * 0.5;
 var SpeedX5 = 2.15;
 music = new Audio('MUSIC/slow.mp3 ');
+music.volume = 0.35
 allCirNum = ['10px', '25px', '50px', '100px', '0%']; //支持关闭光晕
 onSwtAndSon(swtAllCir, swtAllCirSon, getSetAllCir);
 var animationSpeed = document.querySelector('.speed');
@@ -1361,6 +1362,7 @@ radSpeedX5.addEventListener('mouseup', function () {
   speed368_736 = 3.68 * speed;
   speed920_2760 = 1840 * 0.5;
   music = new Audio('MUSIC/slow.mp3 ');
+  music.volume = 0.35
   reStyle();
   this.style.backgroundColor = 'rgb(186, 246, 255)';
   this.style.boxShadow = '0 0 10px 0 rgb(186, 246, 255)';
@@ -1398,6 +1400,7 @@ radSpeed1X.addEventListener('mouseup', function () {
   speed368_736 = 3.68 * speed;
   speed920_2760 = 1840 / speed;
   music = new Audio('MUSIC/standard.mp3 ');
+  music.volume = 0.35
   reStyle();
   this.style.borderRadius = '20px';
   this.style.backgroundColor = 'rgb(192, 253, 206)';
